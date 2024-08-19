@@ -1,18 +1,17 @@
 import { Module } from '@nestjs/common';
+//import { CacheModule} from '@nestjs/cache-manager';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { MembroResolver } from './graphql/resolver/membro.resolver';
-import { PostagemResolver } from './graphql/resolver/postagem.resolver';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Postagem } from './graphql/entity/postagem.entity';
 import { Membro } from './graphql/entity/membro.entity';
 import "dotenv/config"
-import { MembroService } from './graphql/services/membro.service';
-import { PostagemService } from './graphql/services/postagem.service';
 import { MembroModule } from './graphql/modules/membro.module';
 import { PostagemModule } from './graphql/modules/postagem.module';
 import { DataSource } from 'typeorm';
 import { join } from 'path';
+//import * as redisStore from 'cache-manager-ioredis';
+import { ConfigModule} from '@nestjs/config';
 
 
 
@@ -34,6 +33,16 @@ console.log(process.env.NODE_PASSWORD)
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
     }),
+    ConfigModule.forRoot(),
+    //CacheModule.registerAsync({
+      //imports: [ConfigModule],
+      //useFactory: async (configService: ConfigService) => ({
+        //store: redisStore,
+        //host: process.env.REDIS_HOST,
+        //port: process.env.REDIS_PORT,
+      //}),
+      //inject: [ConfigService],
+    //}),
     MembroModule,
     PostagemModule,
   ]

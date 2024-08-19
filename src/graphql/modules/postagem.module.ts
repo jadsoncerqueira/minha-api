@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Postagem } from '../entity/postagem.entity';
 import { PostagemService } from '../services/postagem.service';
 import { PostagemResolver } from '../resolver/postagem.resolver';
+//import { CacheModule } from '@nestjs/cache-manager'; 
 
 @Module({
   imports: [TypeOrmModule.forFeature([Postagem])],
