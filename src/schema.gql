@@ -1,0 +1,45 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Membro {
+  id: ID!
+  nome: String!
+  email: String!
+  dataDeEntrada: DateTime!
+  postagens: [Postagem!]!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Postagem {
+  id: ID!
+  titulo: String!
+  conteudo: String!
+  autor: String!
+  data: DateTime!
+  membro: [Membro!]!
+}
+
+type MembroObject {
+  id: ID!
+  nome: String!
+  email: String!
+  dataDeEntrada: String!
+}
+
+type PostagemObject {
+  id: ID!
+  titulo: String!
+  conteudo: String!
+  autor: String!
+  data: String!
+}
+
+type Query {
+  getMembros: [MembroObject!]!
+  getPostagem: [PostagemObject!]!
+}

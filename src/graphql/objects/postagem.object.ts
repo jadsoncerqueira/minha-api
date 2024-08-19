@@ -1,16 +1,19 @@
 import { ObjectType, Field, ID } from '@nestjs/graphql';
 
 @ObjectType()
-export class MembroObject {
+export class PostagemObject {
   @Field(() => ID)
   id: number;
 
   @Field()
-  nome: string;
+  titulo: string;
 
   @Field()
-  email: string;
+  conteudo: string;
 
   @Field()
-  dataDeEntrada: string;
+  autor: string;
+
+  @Field()
+  data: string;
 }

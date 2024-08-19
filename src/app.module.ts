@@ -1,16 +1,22 @@
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { MembroResolver } from './graphql/resolver/membros.resolver';
-import { PostagemResolver } from './graphql/resolver/postagens.resolver';
+import { MembroResolver } from './graphql/resolver/membro.resolver';
+import { PostagemResolver } from './graphql/resolver/postagem.resolver';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Postagem } from './graphql/entity/postagem.entity';
 import { Membro } from './graphql/entity/membro.entity';
 import "dotenv/config"
+import { MembroService } from './graphql/services/membro.service';
+import { PostagemService } from './graphql/services/postagem.service';
+import { MembroModule } from './graphql/modules/membro.module';
+import { PostagemModule } from './graphql/modules/postagem.module';
+import { DataSource } from 'typeorm';
+import { join } from 'path';
 
 
 
-console.log(process.env.NODE_USERNAME)
+console.log(process.env.NODE_PASSWORD)
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -22,14 +28,15 @@ console.log(process.env.NODE_USERNAME)
       database: process.env.NODE_DATABASE,
       entities: [Postagem, Membro],
       synchronize: true,
+      autoLoadEntities: true,
     }),
-    TypeOrmModule.forFeature([Postagem, Membro]),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      autoSchemaFile: true
+      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
     }),
-  ],
-  controllers: [],
-  providers: [MembroResolver, PostagemResolver]
+    MembroModule,
+    PostagemModule,
+  ]
 })
-export class AppModule {}
+export class AppModule {constructor(private dataSource: DataSource) {}}
+
