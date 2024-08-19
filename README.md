@@ -7,8 +7,6 @@ Ao criar essa api pude colocar em prática conceitos e habilidades como GraphQL 
 
 - [Sobre o app](#sobre-o-app)
 - [Instruções de execução](#instruções-de-execução)
-- [Contribua com o projeto](#contribua-com-o-projeto)
-- [Extra](#extra---adicione-badges)
 
 ## Sobre o app
 
@@ -28,7 +26,7 @@ Configurei todo o banco e a forma com a aplicação interage com ele, porém por
 
 `Como requisito desse projeto voce precisa ter instalado o MySQL na sua maquina`
 
-Para executar esse projeto faça o `git clone`.
+Para executar esse projeto faça o `git clone  git@github.com:jadsoncerqueira/minha-api.git`.
 
 Execute o `npm install`.
 
