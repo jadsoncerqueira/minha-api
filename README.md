@@ -34,6 +34,15 @@ Execute o `npm install`.
 
 Na raiz do projeto renomeio o arquivo `.env.example` para `.env`, depois abra o arquivo e altere as variaveis de ambiente com os dados do seu banco Mysql.
 
+```
+NODE_TYPE=
+NODE_HOST=
+NODE_PORT=
+NODE_USERNAME=
+NODE_PASSWORD=
+NODE_DATABASE=
+```
+
 e por fim por fim rode a api com o comando `npm run start`
 
 Caso voce queira ver ou mudar a porta que a api irá executar, vá ate o arquivo `main.ts` e altere a linha 2 da porta 3000 para alguma outra de sua escolha.
