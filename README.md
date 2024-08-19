@@ -43,6 +43,6 @@ NODE_DATABASE=
 
 e por fim por fim rode a api com o comando `npm run start`
 
-Caso voce queira ver ou mudar a porta que a api irá executar, vá ate o arquivo `src/main.ts` e altere a linha 2 da porta 3000 para alguma outra de sua escolha.
+Caso voce queira ver ou mudar a porta que a api irá executar, vá ate o arquivo `src/main.ts` e altere a linha 6 da porta 3000 para alguma outra de sua escolha.
 
 Após tudo ocorrer bem vá ate o repositorio do app react native web `https://github.com/jadsoncerqueira/front-end` e siga as instruções para executar ele, onde essa api que você acabou de executar sera consumida por ele 
