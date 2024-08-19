@@ -1,73 +1,41 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Api GraphQL simples
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Desenvolvi essa Api para servir os dados para uma aplicação rect native mo ile e web.
+Ao criar essa api pude colocar em prática conceitos e habilidades como GraphQL e NestJS, aprendi na prática.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Tabela de conteúdos
 
-## Description
+- [Sobre o app](#sobre-o-app)
+- [Instruções de execução](#instruções-de-execução)
+- [Contribua com o projeto](#contribua-com-o-projeto)
+- [Extra](#extra---adicione-badges)
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Sobre o app
 
-## Installation
 
-```bash
-$ npm install
-```
+**Nest.js**
 
-## Running the app
+*Usei Nest.js para o back-end devido sua facilidade em criar rotas GraphQL
 
-```bash
-# development
-$ npm run start
+**Redis**
+Cheguei a configurar o Redis mas no meio do caminho tive problemas, mas voltarei depois para rever essa parte da configuração.
 
-# watch mode
-$ npm run start:dev
+**MySQL e typeOrm**
 
-# production mode
-$ npm run start:prod
-```
+Configurei todo o banco e a forma com a aplicação interage com ele, porém por algum motivo que ainda nao descobrir as rotas retirnava listas vazias, então vomo solução temporária criei mocks de dados para que a api pudesse servir o app react web.
 
-## Test
+## Instruções de execução
 
-```bash
-# unit tests
-$ npm run test
+`Como requisito desse projeto voce precisa ter instalado o MySQL na sua maquina`
 
-# e2e tests
-$ npm run test:e2e
+Para executar esse projeto faça o `git clone`.
 
-# test coverage
-$ npm run test:cov
-```
+Execute o `npm install`.
 
-## Support
+Na raiz do projeto renomeio o arquivo `.env.example` para `.env`, depois abra o arquivo e altere as variaveis de ambiente com os dados do seu banco Mysql.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+e por fim por fim rode a api com o comando `npm run start`
 
-## Stay in touch
+Caso voce queira ver ou mudar a porta que a api irá executar, vá ate o arquivo `main.ts` e altere a linha 2 da porta 3000 para alguma outra de sua escolha.
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+Após tudo ocorrer bem vá ate o repositorio do app react native web e siga as instruções para executar ele, onde essa api que você acabou de executar sera consumida por ele 
